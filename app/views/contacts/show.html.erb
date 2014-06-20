@@ -1,3 +1,12 @@
+<body style= "background:url('/assets/show.jpg'); background-repeat:no-repeat; background-size: cover">
+
+<div style="position:absolute; left:37%; top:20%; -webkit-transform: rotate(-20deg); border:5px solid;
+border-radius:25px;">
+ <img style= "border:5px;
+border-radius:25px", src="/data/<%= @contact.upload %>"height=150 width=150> <br>
+</div>
+
+<div style="position:absolute; left:30%; top:48%; -webkit-transform: rotate(-40deg);">
 <p>
   <strong>Name:</strong>
   <%= @contact.firstname %>  <%= @contact.lastname %>
@@ -20,3 +29,5 @@
 
 <%= link_to 'Edit contact', edit_contact_path(@contact) %> |
 <%= link_to 'Back to contacts', contacts_path %>
+</div>
+</body>

@@ -1,3 +1,38 @@
 // Place all the styles related to the contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+input{
+	border-radius:5px;
+	padding-left: 5px;
+	width:200px;
+	height: 50 px;
+
+}
+
+textarea{
+	border-radius:5px;
+	padding-left: 5px;
+	width:200px;
+	height: 200 px;
+	
+}
+body
+{
+	cursor: url('28953.png'), auto;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+
+}
+ 
+::-webkit-scrollbar-track {
+   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+

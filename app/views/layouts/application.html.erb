@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
+<%= favicon_link_tag 'phonebook.png' %>
 <head>
+	<div class="custom">
   <title>ContactsBook</title>
+  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,4 +14,5 @@
 <%= yield %>
 
 </body>
+</div>
 </html>

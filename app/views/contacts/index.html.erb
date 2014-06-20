@@ -1,11 +1,13 @@
-<h1>Listing Contacts</h1>
+<div style="position:absolute; width:275px; height:500px;  left:60%; top:15%; -webkit-transform: rotate(-16deg); overflow-y:auto; overflow-x:hidden">
+  <h1>Listing Contacts</h1>
 <table cellspacing="10">
   <tr>
     <th>Name</th>
-
     <th colspan="2"></th>
   </tr>
- 
+
+ <body style= " background:url('/assets/28094.jpg'); background-repeat:no-repeat; background-size: cover; ">
+
 <% @contacts.each do |contact| %>
   <tr>
     <td><%= contact.firstname %></td>
@@ -18,3 +20,5 @@
 </table>
 <br>
 &nbsp&nbsp&nbsp <%= link_to 'New contact', new_contact_path %>
+</body>
+</div>
