@@ -27,6 +27,7 @@ class ContactsController < ApplicationController
 
 	def update
 	  @contact = Contact.find(params[:id])
+	  cleanup
 	  photo
 	  if @contact.update(contact_params)
   	  redirect_to @contact
@@ -51,6 +52,10 @@ class ContactsController < ApplicationController
 		    File.open(path, "wb") { |f| f.write(params[:contact][:upload].read) }
 		    @contact.upload = name
 		end
+
+ 	def cleanup
+    File.delete("#{Rails.root}/public/data/#{@contact.upload}") if File.exist?("#{Rails.root}/public/data/#{@contact.upload}")
+	end
 
 	private
   	def contact_params
