@@ -1,11 +1,32 @@
 <div align="center">
-<img src="/assets/old-curled-paper.jpg" height="650">
+  <img src="/assets/old-curled-paper.jpg" height="700">
 </div>
 
 <div style="position: absolute; top: 10%; left:43%">
-<h1>New contact</h1>
- 
-<%= render 'form' %>
- 
-<%= link_to 'Back', contacts_path %>
+  <h1>New contact</h1>
+
+  <%= render 'form' %>
+
+  <%= link_to 'Back', contacts_path %>
+
+  <div id="nam"
+  ,style="position:absolute; left:10%; top:10%">
+</div>
+<script>
+    function val() {
+        var firstname = document.getElementById("contact_firstname").value
+        alert("firstname");
+        var mobileno = document.getElementById("contact_mobileno").value
+        if (firstname == "" || mobileno == "") {
+//alert("Input values cannot be empty buddy!!");
+            document.getElementById("demo").innerHTML = "wrong";
+
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+
 

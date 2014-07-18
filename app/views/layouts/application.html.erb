@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="min-height:100%; position:relative;">
 <%= favicon_link_tag 'phonebook.png' %>
 <head>
 	<div class="custom">
@@ -8,9 +8,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
 
+  <%= yield(:head) %>
+</head>
+<% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 <%= yield %>
 
 </body>

@@ -1,0 +1,29 @@
+<div class="header">
+  <div style="padding-top:20px;font-weight:bold;">
+    <span style="padding-left: 50px;font-size:25px;"><img style="height:2%;width:2%;" src="/assets/con.png">&nbsp;Contacts Book </span>
+  <span style="margin-left:50%"><a href="/contacts/index">Home&nbsp;&nbsp;&nbsp;
+    <a href="/contacts/index">All&nbsp;&nbsp;&nbsp;</a>
+    <a href="/contacts/male">Male&nbsp;&nbsp;&nbsp;</a>
+    <a href="/contacts/female">Female</a> </span>
+  </div>
+</div>
+
+<body bgcolor="#D9D9D9">
+
+<% @contacts.each do |contact| %>
+    <tr>
+      <td><%= contact.firstname %> </td>
+      <td><%= link_to 'Show', contact_path(contact) %></td>
+      <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+      <td><%= link_to 'Destroy', contact_path(contact),
+                      method: :delete, data: {confirm: 'Hold On!! Are you sure?'} %></td>
+    </tr>
+<% end %>
+
+<%= link_to 'New contact', new_contact_path %>
+
+
+</body>
+<div class="footer", align="center">
+<h6> All text and design &#169; 2014 Report Bee Edusys Pvt. Ltd. </h6>
+</div>

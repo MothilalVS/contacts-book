@@ -1,0 +1,36 @@
+<body style= "background:url('/assets/brushwoman1.jpg'); background-repeat:no-repeat; background-size: cover">
+
+<div style="position: absolute; top: 12%; left:33%">
+<h1>Edit Contact</h1>
+ 
+<%= form_for :contact, url: contact_path(@contact), method: :patch do |f| %>
+<p>
+    <%= f.label :firstname %><br>
+    <%= f.text_field :firstname %>
+  </p>
+ 
+  <p>
+    <%= f.label :lastname %><br>
+    <%= f.text_field :lastname %>
+  </p>
+ 
+  <p>
+    <%= f.label :emailid %><br>
+    <%= f.text_field :emailid %>
+  </p>
+
+<p>
+    <%= f.label :mobileno %><br>
+    <%= f.text_field :mobileno %>
+  </p>
+
+<p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </p>
+
+<%= f.submit %>
+
+<% end %> 
+<%= link_to 'Back', contacts_path %>
+</div>

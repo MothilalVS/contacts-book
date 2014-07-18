@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
+	$search_trigger=false
 	def index
-  	@contacts = Contact.all
+  	@contacts = Contact.where(pid: '1')
 	end
 	
 	def new
@@ -8,10 +9,10 @@ class ContactsController < ApplicationController
 	end
 
 	def create
-		@contact = Contact.new(contact_params)
+		@contact = Contact.create(contact_params)
 		photo
  		if @contact.save
-  		redirect_to @contact
+  		redirect_to contact_path(@contact)
 		else
 		render 'new'
 		end
@@ -39,8 +40,10 @@ class ContactsController < ApplicationController
 	def destroy
   	@contact = Contact.find(params[:id])
   	@contact.destroy
+  	File.delete("#{Rails.root}/public/data/#{@contact.upload}")
  
   	redirect_to contacts_path
+	#render '/contacts/index'
 	end
 
 	def photo
@@ -57,10 +60,28 @@ class ContactsController < ApplicationController
     File.delete("#{Rails.root}/public/data/#{@contact.upload}") if File.exist?("#{Rails.root}/public/data/#{@contact.upload}")
 	end
 
+
+
+  def quicksearch
+    q = params[:name]
+    @contacts= Contact.where("firstname like ?  or lastname like ? or fullname like ?","#{q}%", "#{q}%","#{q}%" )
+    render json: @contacts.as_json
+  end
+
+	def male
+		@contacts= Contact.where(gender: "Male")
+		render "index"
+	end
+
+	def female
+		@contacts= Contact.where(gender: "female")
+		render "index"
+	end
+
 	private
   	def contact_params
-
-    	params.require(:contact).permit(:firstname, :lastname, :emailid, :mobileno, :address)
+      Contact.pid = User.id
+    	params.require(:contact).permit(:firstname, :lastname, :emailid, :mobileno, :address, :gender)
   	end
 
 end

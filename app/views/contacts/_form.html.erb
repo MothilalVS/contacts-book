@@ -1,27 +1,34 @@
 <%= form_for :contact, url: contacts_path do |f| %>
-<p>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :firstname %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :lastname %>
-  </p>
-  <p>
-    <%= f.label :email_id %><br>
-    <%= f.text_field :emailid %>
-  </p>
-<p>
-    <%= f.label :mobile_no %><br>
-    <%= f.text_field :mobileno %>
-  </p>
-<p>
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </p> 
-<p>
-  <%= f.label :Upload_photo %> : 
-<%= f.file_field :upload %></p>
-<%= f.submit %>
-  </p>
+    <p>
+      <%= f.label :first_name %><br>
+      <%= f.text_field :firstname %>
+    </p>
+    <p>
+      <%= f.label :last_name %><br>
+      <%= f.text_field :lastname %>
+    </p>
+    <p>
+      <%= f.label :Gender %><br>
+      <%= f.radio_button :gender, 'Male' %>
+      <%= f.label :gender, 'Male' %>
+      <%= f.radio_button :gender, 'Female' %>
+      <%= f.label :gender, 'Female' %>
+    </p>
+    <p>
+      <%= f.label :email_id %><br>
+      <%= f.text_field :emailid %>
+    </p>
+    <p>
+      <%= f.label :mobile_no %><br>
+      <%= f.text_field :mobileno %>
+    </p>
+    <p>
+      <%= f.label :address %><br>
+      <%= f.text_area :address %>
+    </p>
+    <p>
+      <%= f.label :Upload_photo %> :
+      <%= f.file_field :upload %></p>
+    <%= f.submit :onclick => "return val();" %>
+    </p>
 <% end %>

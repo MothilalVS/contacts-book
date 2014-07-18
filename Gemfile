@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
-
-
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use mysql as the database for Active Record
 gem 'mysql2'
+
+gem 'unicorn', '~> 4.8.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
