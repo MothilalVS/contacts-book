@@ -9,6 +9,6 @@ Rails.application.routes.draw do
  get 'contacts/female'
  get  'contacts/index'
  	resources :contacts
-	root 'contacts#index'
-
+  root  'contacts#index'
 end
+

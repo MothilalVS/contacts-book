@@ -2,15 +2,18 @@
 <html style="min-height:100%; position:relative;">
 <%= favicon_link_tag 'phonebook.png' %>
 <head>
-	<div class="custom">
+
   <title>ContactsBook</title>
   
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+
+
   <%= yield(:head) %>
 </head>
+      <body>
 <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -20,5 +23,4 @@
 <%= yield %>
 
 </body>
-</div>
 </html>

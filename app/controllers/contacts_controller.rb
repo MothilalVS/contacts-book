@@ -80,7 +80,7 @@ class ContactsController < ApplicationController
 
 	private
   	def contact_params
-      Contact.pid = User.id
+     # Contact.pid = User.id
     	params.require(:contact).permit(:firstname, :lastname, :emailid, :mobileno, :address, :gender)
   	end
 
